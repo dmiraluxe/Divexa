@@ -1,327 +1,276 @@
-/* DIVYA GLOBAL - MASTER STYLESHEET v4.1 (FULL RESTORE)
-   - Stable Buttons (No Shaking)
-   - Nomee Logo: Balanced Large (Contact Page Scale: 60px)
-   - Branding: DIVYA Text
-   - Dark 3D Enterprise Theme
+/* DIVEXA GLOBAL - MASTER STYLESHEET v4.0
+   - Stable Buttons (No Shaking)
+   - Extra Large & Clear Logos
+   - Dark 3D Enterprise Theme
 */
 
 :root {
-    --primary-bg: #050505;
-    --accent: #ff9d00;
-    --accent-glow: rgba(255, 157, 0, 0.5);
-    --glass: rgba(255, 255, 255, 0.04);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --text-main: #ffffff;
-    --text-dim: #b0b0b0;
-    --nav-height: 110px;
+    --primary-bg: #050505;
+    --accent: #ff9d00;
+    --accent-glow: rgba(255, 157, 0, 0.5);
+    --glass: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
+    --nav-height: 100px; /* Increased for larger logos */
 }
 
-/* --- 1. CORE RESET & TYPOGRAPHY --- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: var(--primary-bg);
-    color: var(--text-main);
-    overflow-x: hidden;
-    line-height: 1.7;
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.7;
 }
 
-/* --- 2. LOGO & BRANDING UPDATES --- */
-.brand-identity {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-/* DIVYA Logo Text */
-.divya-logo-text {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 4px;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-.divya-logo-text span {
-    color: var(--accent);
-}
-
-/* Nomee Logo: Balanced Large */
-.initiative-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-left: 1.5px solid var(--glass-border);
-    padding-left: 20px;
+/* --- LOGO SIZING & VISIBILITY FIX --- */
+.brand-main {
+    height: 70px !important; /* Made significantly larger */
+    width: auto;
+    filter: brightness(0) invert(1); /* Forces logo to be white on dark bg */
+    transition: transform 0.3s ease;
+    object-fit: contain;
 }
 
 .brand-sub {
-    height: 60px !important; /* Contact Page Size */
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 1;
-    object-fit: contain;
+    height: 45px !important; /* Made Nomee logo larger */
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
-.tagline-pot {
-    font-family: 'Orbitron';
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    color: var(--accent-green, #00ff88);
-    margin-top: 5px;
-    text-transform: uppercase;
+.footer-logo {
+    height: 60px !important;
+    filter: brightness(0) invert(1);
+    margin-bottom: 25px;
 }
 
-/* --- 3. VISUAL ENGINE (Background Grid) --- */
+.brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* --- VISUAL ENGINE (Background) --- */
 .visual-engine {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .gradient-sphere {
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    top: -250px;
-    right: -100px;
-    filter: blur(100px);
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    top: -250px;
+    right: -100px;
+    filter: blur(100px);
 }
 
 .grid-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
 }
 
-/* --- 4. NAVIGATION --- */
+/* --- NAVIGATION --- */
 .main-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: var(--nav-height);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .container {
-    width: 92%;
-    max-width: 1400px;
-    margin: 0 auto;
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-list {
-    display: flex;
-    list-style: none;
-    gap: 40px;
+    display: flex;
+    list-style: none;
+    gap: 40px;
 }
 
 .nav-anchor {
-    text-decoration: none;
-    color: var(--text-dim);
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 .nav-anchor:hover, .nav-anchor.active {
-    color: var(--accent);
+    color: var(--accent);
 }
 
-/* --- 5. BUTTONS (STABLE) --- */
+/* --- BUTTONS (STABLE - NO SHAKING) --- */
 .btn-primary-3d {
-    padding: 18px 40px;
-    background: var(--accent);
-    color: #000;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 10px;
-    font-family: 'Orbitron';
-    display: inline-block;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 5px 15px rgba(255, 157, 0, 0.3);
+    padding: 18px 40px;
+    background: var(--accent);
+    color: #000;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 10px;
+    font-family: 'Orbitron';
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(255, 157, 0, 0.3);
 }
 
 .btn-primary-3d:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 15px 30px var(--accent-glow);
+    transform: translateY(-4px) !important; /* Only vertical movement */
+    box-shadow: 0 15px 30px var(--accent-glow);
 }
 
 .btn-secondary-glow {
-    padding: 18px 40px;
-    border: 1px solid var(--glass-border);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 10px;
-    display: inline-block;
-    transition: all 0.3s ease;
+    padding: 18px 40px;
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .btn-secondary-glow:hover {
-    border-color: var(--accent);
-    background: rgba(255, 157, 0, 0.05);
+    border-color: var(--accent);
+    background: rgba(255, 157, 0, 0.05);
 }
 
-/* --- 6. HERO SECTION --- */
+/* --- HERO SECTION --- */
 .hero-arena {
-    padding-top: 220px;
-    padding-bottom: 120px;
+    padding-top: 220px;
+    padding-bottom: 120px;
 }
 
 .mega-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 85px;
-    line-height: 1.05;
-    font-weight: 900;
-    margin-bottom: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 85px;
+    line-height: 1.05;
+    font-weight: 900;
+    margin-bottom: 30px;
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, #ff9d00, #ffea00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #ff9d00, #ffea00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
-    font-size: 20px;
-    color: var(--text-dim);
-    max-width: 700px;
-    margin-bottom: 50px;
+    font-size: 20px;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin-bottom: 50px;
 }
 
-/* --- 7. CARDS & GRIDS --- */
+/* --- CARDS & GRIDS --- */
 .verticals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
 }
 
 .vertical-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    padding: 50px;
-    border-radius: 30px;
-    transition: 0.4s ease;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 50px;
+    border-radius: 30px;
+    transition: 0.4s ease;
 }
 
 .vertical-card:hover {
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-10px);
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-10px);
 }
 
 .v-icon {
-    font-size: 45px;
-    color: var(--accent);
-    margin-bottom: 25px;
+    font-size: 45px;
+    color: var(--accent);
+    margin-bottom: 25px;
 }
 
-/* --- 8. STATUS INDICATOR --- */
+/* --- STATUS INDICATOR --- */
 .live-tag {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 8px 20px;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 800;
-    border: 1px solid var(--glass-border);
-    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 20px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid var(--glass-border);
+    margin-bottom: 20px;
 }
 
 .ping-dot {
-    height: 10px;
-    width: 10px;
-    background: #00ff44;
-    border-radius: 50%;
-    margin-right: 12px;
-    box-shadow: 0 0 10px #00ff44;
-    animation: pulse 2s infinite;
+    height: 10px;
+    width: 10px;
+    background: #00ff44;
+    border-radius: 50%;
+    margin-right: 12px;
+    box-shadow: 0 0 10px #00ff44;
+    animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
 
-/* --- 9. CONTACT FORM STYLING (For Contact Page) --- */
-.glass-morph {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    padding: 50px;
-    border-radius: 30px;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-control-custom {
-    width: 100%;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid var(--glass-border);
-    padding: 15px 20px;
-    color: white;
-    border-radius: 10px;
-    outline: none;
-}
-
-.form-control-custom:focus {
-    border-color: var(--accent);
-}
-
-/* --- 10. CORPORATE FOOTER --- */
+/* --- FOOTER --- */
 .corporate-footer {
-    padding: 100px 0 40px;
-    background: #000;
-    border-top: 1px solid var(--glass-border);
+    padding: 100px 0 40px;
+    background: #000;
+    border-top: 1px solid var(--glass-border);
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
 }
 
-/* --- 11. RESPONSIVE --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
-    .mega-title { font-size: 60px; }
-    .verticals-grid { grid-template-columns: 1fr 1fr; }
+    .mega-title { font-size: 60px; }
+    .verticals-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
-    .mega-title { font-size: 45px; }
-    .divya-logo-text { font-size: 22px; }
-    .brand-sub { height: 45px !important; }
-    .verticals-grid { grid-template-columns: 1fr; }
-    .nav-list { display: none; }
+    .mega-title { font-size: 45px; }
+    .brand-main { height: 50px !important; }
+    .verticals-grid { grid-template-columns: 1fr; }
+    .nav-list { display: none; }
 }
